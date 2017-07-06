@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Massages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @massages.each do |massage| %>
+      <tr>
+        <td><%= massage.title %></td>
+        <td><%= massage.message %></td>
+        <td><%= link_to 'Show', massage %></td>
+        <td><%= link_to 'Edit', edit_massage_path(massage) %></td>
+        <td><%= link_to 'Destroy', massage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Massage', new_massage_path %>
